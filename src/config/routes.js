@@ -1,12 +1,23 @@
-import Home from '../components/screen/Home';
+import Home from '../components/Home';
 import Place from '../components/screen/Place';
 import Rooms from '../components/screen/Rooms'
 import Room from '../components/screen/Room'
 
 const routes = [
   {
-    textMenu: "Acceuil",
-    url: "/acceuil",
+    textMenu: "Accueil",
+    mainMenu: false,
+    url: "/",
+    component: Home,
+    seo: {
+      title: 'Le Mas Bellane, maison d\'hôtes et agriculture biologique au coeur de la Drôme',
+      description: ''
+    }
+  },
+  {
+    textMenu: "Accueil",
+    mainMenu: true,
+    url: "/accueil",
     component: Home,
       seo: {
       title: 'Le Mas Bellane, maison d\'hôtes et agriculture biologique au coeur de la Drôme',
@@ -15,6 +26,7 @@ const routes = [
   },
   {
     textMenu: "Le Lieu",
+    mainMenu: true,
     url: "/le-lieu",
     component: Place,
     seo: {
@@ -24,29 +36,31 @@ const routes = [
   },
   {
     textMenu: "Les Chambres",
+    mainMenu: true,
     url: "/les-chambres",
     component: Rooms,
     seo: {
       title: '',
       description: '',
     },
-    routes: [
-      {
-        textMenu: "La Chambre de l'Eau",
-        url: "/les-chambres/la-chambre-de-l-eau",
-        component: Room
-      },
-      {
-        textMenu: "La Chambre du Feu",
-        url: "/les-chambres/la-chambre-du-feu",
-        component: Room
-      },
-      {
-        textMenu: "La Chambre de la Terre",
-        url: "/les-chambres/la-chambre-de-la-terre",
-        component: Room
-      }
-    ]
+  },
+  {
+    textMenu: "La Chambre de l'Eau",
+    mainMenu: false,
+    url: "/les-chambres/la-chambre-de-l-eau",
+    component: Room
+  },
+  {
+    textMenu: "La Chambre du Feu",
+    mainMenu: false,
+    url: "/les-chambres/la-chambre-du-feu",
+    component: Room
+  },
+  {
+    textMenu: "La Chambre de la Terre",
+    mainMenu: false,
+    url: "/les-chambres/la-chambre-de-la-terre",
+    component: Room
   },
   // {
   // textMenu:  

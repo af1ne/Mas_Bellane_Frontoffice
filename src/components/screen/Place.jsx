@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 class Place extends Component {
   render() {
     return (
-      <div>
-        <p>Ca c'est la Place</p>
+      <div id='place'>
+        <p>Ca c'est le Lieu</p>
       </div>
     );
   }

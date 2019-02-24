@@ -9,9 +9,15 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      {routes.map(({ path, component: C }) => (
-        <Route exact path={path} key={path} render={props => <C {...props} />} />        ))}
-        <Route exact path="/*" render={() => <div>404</div>} />
+      {routes.map(({ url, component: C }) => (
+        <Route
+          exact
+          path={url}
+          key={url}
+          render={props => <C {...props} />} 
+        />
+      ))}
+      <Route exact url="/*" render={() => <div>404</div>} />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root'),

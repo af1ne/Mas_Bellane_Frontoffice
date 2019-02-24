@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 class Room extends Component {
   render() {
     return (
-      <div >
-        <p>Ca c'est la Room</p>
+      <div id='room'>
+        <p>Ca c'est une seule Chambre</p>
       </div>
     );
   }
