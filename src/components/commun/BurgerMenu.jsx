@@ -3,15 +3,14 @@ import styled from 'styled-components';
 import { Colors } from '../StyledComponents';
 
 const BurgerContainer = styled.div`
+  position: fixed; 
   height: 3rem;
   width: 3rem;
-  position: stiky;
-  margin-top: 0px;
-  margin-right: 5%;
-  margin-left: 95%;
+  top: 3vh;
+  left: 90vw;
+  right: 3vw;
   display: flex;
   flex-direction: column;
-  justify-content: 'center';
 `;
 
 const BurgerBar = styled.div`
