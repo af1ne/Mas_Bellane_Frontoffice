@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Colors, Title1, Title2, SectionContainer, ResponsiveImg } from '../StyledComponents';
+import { Col, colors, Title1, Title2, SectionContainer, ResponsiveImg } from '../StyledComponents';
 import cover from '../../assets/images/cover.jpg';
-
+import Button from '../commun/Button';
 
 const TextContainer = styled.div`
   width: 60vw;
   heigth: 40vh;
   margin: auto;
-  background-color: ${Colors.whiteTransparent};
+  background-color: ${colors.whiteTransparent};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,28 +16,30 @@ const TextContainer = styled.div`
   border-radius: 10px;
 `;
 
-const FilterContainer = styled.div`
+const BackgroundCover = styled.div`
   width: 100vw;
   heigth: 100vh;
   margin: auto;
-  background-color: ${Colors.black};
-
-  position: absolute;
+  background-image: linear-gradient(${colors.blackTransparent}, ${colors.blackTransparent}), url(${cover});
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -10;
 `;
 
 class Cover extends Component {
   render() {
     return (
-      <SectionContainer id='cover'>
-        <FilterContainer>
-        <ResponsiveImg src={cover} alt="Patio du Mas Bellane" />
-        </FilterContainer>
-        <TextContainer>
-          <Title1>Bienvenue au Mas Bellane<br /> l'écotourisme au coeur de la Drôme</Title1>
-          <Title2 textTransform="capitalize">Maison d’hôtes et agriculture Biologique</Title2>
-        </TextContainer>
-        
-      </SectionContainer>
+        <BackgroundCover>
+          <SectionContainer id='cover'>
+              <Col>
+              <TextContainer>
+                <Title1>Bienvenue au Mas Bellane<br /> l'écotourisme au coeur de la Drôme</Title1>
+                <Title2 textTransform="capitalize">Maison d’hôtes et agriculture Biologique</Title2>
+              </TextContainer>
+              <Button>Réservation</Button>
+            </Col>
+          </SectionContainer>
+        </BackgroundCover>
     );
   }
 }

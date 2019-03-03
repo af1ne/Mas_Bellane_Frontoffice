@@ -1,33 +1,43 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { HamburgerSpring } from 'react-animated-burgers';
 import styled from 'styled-components';
-import { Colors } from '../StyledComponents';
+import { mobileThresholdPixels } from '../StyledComponents';
 
-const BurgerContainer = styled.div`
-  position: fixed; 
-  height: 3rem;
-  width: 3rem;
-  top: 3vh;
-  left: 90vw;
-  right: 3vw;
-  display: flex;
-  flex-direction: column;
+
+const Burger = styled.div`
+  position: fixed;
+  top: 1vh;
+  left: 92vw;
+  border-radius: 1rem;
+
+
+  @media (max-width: ${mobileThresholdPixels}) {
+    left: 83vw;
+    margin-right: 2vw;
+  }
 `;
 
-const BurgerBar = styled.div`
-  height: 0.5rem;
-  width: 2.5rem;
-  border-radius: 0.1rem;
-  background-color: ${Colors.whiteTransparent};
-  margin: 0.3rem 0.3rem 0.3rem 0.3rem;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.20);
-  `;
-  
-const BurgerMenu = () => (
-  <BurgerContainer >
-    <BurgerBar />
-    <BurgerBar />
-    <BurgerBar />
-  </BurgerContainer>
+const BurgerMenu = ({ onClick, isOpen }) => (
+  <Burger>
+    <HamburgerSpring 
+      isActive={isOpen}
+      toggleButton={onClick}
+      buttonColor="rgba(0, 0, 0, 0.30)"
+      barColor="white"
+      buttonWidth={27}
+    />
+  </Burger>
 );
 
-export default BurgerMenu; 
+BurgerMenu.propTypes = {
+  onClick: PropTypes.func,
+  isOpen: PropTypes.bool,
+};
+
+BurgerMenu.defaultProps = {
+  onClick() { },
+  isOpen: false,
+};
+
+export default BurgerMenu;
