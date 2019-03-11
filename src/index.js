@@ -6,6 +6,9 @@ import './index.css';
 import { ModalProvider } from 'styled-react-modal';
 import routes from './config/routes';
 import * as serviceWorker from './serviceWorker';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://127.0.0.1:5001/api/';
 
 ReactDOM.render(
   <BrowserRouter>

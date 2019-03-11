@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import { mobileThresholdPixels, colors, fontSizes } from '../StyledComponents';
 
 const ButtonContainer = styled.button`
-width: 20vw;
+width: 18vw;
 height: 5vh
 border-radius: 0.6rem;
 font-family: Bentham;
-font-size: ${fontSizes.l};
+font-size: ${fontSizes.m};
 margin: auto;
 text-transform: uppercase;
-background-color: ${colors.red}
+background-color: ${props => props.darkGreen ? colors.darkGreen : colors.red};
 border: none;
 color: ${colors.lightGrey};
 box-shadow:  0 0 4px ${colors.blackTransparent};
@@ -34,9 +34,9 @@ transition: background 1s;
   }
 `;
 
-const Button = () => (
-  <ButtonContainer >
-      réservation
+const Button = ({ label, darkGreen }) => (
+  <ButtonContainer darkGreen={darkGreen} >
+      {label}
   </ButtonContainer>
 );
 

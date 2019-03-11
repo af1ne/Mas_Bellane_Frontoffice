@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Col, colors, Title1, Title2, SectionContainer, ResponsiveImg } from '../StyledComponents';
+import axios from 'axios';
+import { colors, Title1, Title2, SectionContainer } from '../StyledComponents';
 import cover from '../../assets/images/cover.jpg';
 import Button from '../commun/Button';
+
+const CoverContenainer = styled(SectionContainer)`
+  height: 95vh;
+`;
 
 const TextContainer = styled.div`
   width: 60vw;
@@ -27,18 +32,28 @@ const BackgroundCover = styled.div`
 `;
 
 class Cover extends Component {
+  state = {
+    dataCover: {},
+  }
+  componentDidMount() {
+    this.getDataCover();
+  }
+  getDataCover = async event => {
+    const response = await axios.get(`/sections`);
+    this.setState({ dataCover: response.data[0] });
+  }
+
   render() {
+    const { dataCover} = this.state;
     return (
         <BackgroundCover>
-          <SectionContainer id='cover'>
-              <Col>
-              <TextContainer>
-                <Title1>Bienvenue au Mas Bellane<br /> l'écotourisme au coeur de la Drôme</Title1>
-                <Title2 textTransform="capitalize">Maison d’hôtes et agriculture Biologique</Title2>
-              </TextContainer>
-              <Button>Réservation</Button>
-            </Col>
-          </SectionContainer>
+          <CoverContenainer id='cover'>
+            <TextContainer>
+              <Title1>{dataCover.title}</Title1>
+              <Title2 textTransform="capitalize">{dataCover.subtitle}</Title2>
+            </TextContainer>
+            <Button label={dataCover.textButton} />
+          </CoverContenainer>
         </BackgroundCover>
     );
   }

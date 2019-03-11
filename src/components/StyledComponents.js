@@ -34,17 +34,17 @@ export const BoxShadows = styled.div`
 // ****************************************
 
 export const fontSizes = {
-  xs: '12px',
-  s: '14px',
-  m: '18px',
-  l: '24px',
-  xl: '36px',
+  xs: '1vh',
+  s: '2vh',
+  m: '2.5vh',
+  l: '4vh',
+  xl: '5vh',
 };
 
 export const lineHeight = {
-  xs: '18px',
-  s: '21px',
-  m: '25px',
+  xs: '3.5vh',
+  s: '2vh',
+  m: '3vh',
   l: '32px',
   xl: '44px',
 }
@@ -62,10 +62,10 @@ export const Title1 = styled.h1`
   text-transform: ${props => props.textTransform || "uppercase"};
   font-weight: 550;
   text-align: center;
-  font-size: ${fontSizes.xl};
+  font-size: ${fontSizes.l};;
 
   @media (max-width: ${mobileThresholdPixels}) {
-    font-size: ${fontSizes.s};
+    font-size: ${fontSizes.m};;
   }
 `;
 
@@ -77,7 +77,7 @@ export const Title2 = styled.h2`
   justify-content: center;
   text-transform: ${props => props.textTransform || "uppercase"};
   text-align: center;
-  font-size: ${fontSizes.xs};
+  font-size: ${fontSizes.l};
 
   @media (max-width: ${mobileThresholdPixels}) {
     font-size: ${fontSizes.m};
@@ -89,7 +89,7 @@ export const TitleSection = styled.h2`
   font-style: normal;
   font-weight: normal;
   line-height: normal;
-  font-size: ${fontSizes.l};
+  font-size: ${fontSizes.m};
   text-align: center;
   text-transform: uppercase;
   margin-top: 5vh;
@@ -104,12 +104,12 @@ export const Text = styled.p`
   font-style: normal;
   font-weight: normal;
   line-height: ${lineHeight.xl};
-  font-size: ${fontSizes.l};
+  font-size: ${fontSizes.m};
   text-align: justify;
 
   @media (max-width: ${mobileThresholdPixels}) {
     line-height: ${lineHeight.xs};
-    font-size: ${fontSizes.xs};
+    font-size: ${fontSizes.m};
   }
 `;
 
@@ -117,16 +117,17 @@ export const Text = styled.p`
 // ***              Grid                ***
 // ****************************************
 
-export const Row = styled.div`
+export const CardsContenaire = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
-`;
+  justify-content: ${props => props.spaceEvenly ? 'space-evenly' : 'space-between'};
+  align-item: strech;
+  width: 100%;
 
-export const Col = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  @media (max-width: ${mobileThresholdPixels}) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 // ****************************************
@@ -134,14 +135,13 @@ export const Col = styled.div`
 // ****************************************
 
 export const SectionContainer = styled.div`
-  margin: auto;
-  height: 100vh;
-  width: 75vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   @media (max-width: ${mobileThresholdPixels}) {
-    width: 67vw;
+    
   }
   `;
 
