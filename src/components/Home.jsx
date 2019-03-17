@@ -5,7 +5,11 @@ import MenuModal from './commun/MenuModal';
 import Cover from './screen/Cover';
 import Place from './screen/Place';
 import Rooms from './screen/Rooms';
-import Annex from './screen/Annex';
+import Annexes from './screen/Annexes';
+import HostTable from './screen/HostTable';
+import OurHistory from './screen/OurHistory';
+import Ecotourism from './screen/Ecotourism';
+import Around from  './screen/Around';
 
 const App = styled.div`
   width: 100vw;
@@ -13,7 +17,7 @@ const App = styled.div`
   background-color: ${colors.lightGrey};
   
 `;
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${colors.lightGrey};
@@ -34,8 +38,14 @@ class Home extends Component {
         <Container>
           <Place />
           <Rooms />
-          <Annex />
+          <Annexes />
         </Container>
+        <HostTable />
+        <OurHistory />
+        <Container>
+          <Ecotourism />
+        </Container>
+        <Around />
       </App>
     );
   }

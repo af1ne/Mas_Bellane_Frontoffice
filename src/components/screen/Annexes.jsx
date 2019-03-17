@@ -5,10 +5,10 @@ import Underline from '../commun/Underline';
 import RoomCard from '../cards/RoomCard';
 import Button from '../commun/Button';
 
-class Annex extends Component {
+class Annexes extends Component {
   state = {
     dataSection: {},
-    dataAnnex: [],
+    dataAnnexes: [],
   }
   componentDidMount() {
     this.getDataSection();
@@ -20,13 +20,13 @@ class Annex extends Component {
   }
   getDataAnnex = async event => {
     const response = await axios.get(`/annex`);
-    this.setState({ dataAnnex: response.data });
+    this.setState({ dataAnnexes: response.data });
   }
 
   render() {
-    const { dataAnnex, dataSection } = this.state;
+    const { dataAnnexes, dataSection } = this.state;
     return (
-      <SectionContainer id='Annex'>
+      <SectionContainer id='Annexes'>
         <TitleSection>
           {dataSection.title}
         </TitleSection>
@@ -35,7 +35,7 @@ class Annex extends Component {
           {dataSection.content}
         </Text>
         <CardsContenaire spaceEvenly>
-          {dataAnnex.map(dataAnnex => 
+          {dataAnnexes.map(dataAnnex => 
           <RoomCard
             key={dataAnnex.idroom}
             title={dataAnnex.title}
@@ -46,10 +46,11 @@ class Annex extends Component {
         <Button
           label={dataSection.textButton}
           darkGreen
+          marginTopAndBottom
         />
       </SectionContainer>
     );
   }
 }
 
-export default Annex;
+export default Annexes;

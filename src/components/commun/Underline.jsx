@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { mobileThresholdPixels } from '../StyledComponents';
 import underline from '../../assets/images/underline.png';
+import underlineWhite from "../../assets/images/underlineWhite.png";
 
 const UnderlineContainer = styled.div`
   align-self: center;
@@ -16,9 +17,9 @@ const Img = styled.img`
   }
 `;
 
-const Underline = () => (
-  <UnderlineContainer >
-    <Img src={underline} alt='underline' />
+const Underline = ({ white }) => (
+  <UnderlineContainer>
+    <Img src={white ? underlineWhite : underline} alt='underline' />
   </UnderlineContainer>
 );
 

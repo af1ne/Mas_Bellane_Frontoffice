@@ -99,13 +99,18 @@ export const TitleSection = styled.h2`
   }
 `;
 
+export const Subtitle = styled(TitleSection)`
+  ont-size: ${fontSizes.s};
+  margin-top: 0px;
+`;
+
 export const Text = styled.p`
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
   line-height: ${lineHeight.xl};
   font-size: ${fontSizes.m};
-  text-align: justify;
+  text-align: ${props => props.center ? 'center' : 'justify'};
 
   @media (max-width: ${mobileThresholdPixels}) {
     line-height: ${lineHeight.xs};
@@ -131,8 +136,39 @@ export const CardsContenaire = styled.div`
 `;
 
 // ****************************************
+// ***             Background           ***
+// ****************************************
+export const BackgroundSection = styled.div`
+  display: block;
+  margin: auto;
+  height: ${props => props.height ? props.height : 'auto'};
+  background-image: ${props =>
+    props.noFilter
+      ? ""
+      : `linear-gradient(
+      ${colors.blackTransparent}, 
+      ${colors.blackTransparent}),`}
+    url(${props => props.image});
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -10;
+`;
+
+// ****************************************
 // ***       Section Containers         ***
 // ****************************************
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
+  margin: auto;
+  color: ${props => props.white ? 'white' : ''};
+
+  @media (max-width: ${mobileThresholdPixels}) {
+    width: 67vw;
+  }
+`;
 
 export const SectionContainer = styled.div`
   display: flex;

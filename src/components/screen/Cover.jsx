@@ -52,7 +52,7 @@ class Cover extends Component {
               <Title1>{dataCover.title}</Title1>
               <Title2 textTransform="capitalize">{dataCover.subtitle}</Title2>
             </TextContainer>
-            <Button label={dataCover.textButton} />
+            <Button label={dataCover.textButton} marginTopAndBottom/>
           </CoverContenainer>
         </BackgroundCover>
     );

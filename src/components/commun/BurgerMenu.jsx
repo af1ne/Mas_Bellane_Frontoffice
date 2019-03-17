@@ -8,7 +8,7 @@ import { mobileThresholdPixels } from '../StyledComponents';
 const Burger = styled.div`
   position: fixed;
   top: 1vh;
-  left: 92vw;
+  left: 95vw;
   border-radius: 1rem;
 
 
@@ -25,7 +25,7 @@ const BurgerMenu = ({ onClick, isOpen }) => (
       toggleButton={onClick}
       buttonColor="rgba(0, 0, 0, 0.30)"
       barColor="white"
-      buttonWidth={27}
+      buttonWidth={25}
     />
   </Burger>
 );
