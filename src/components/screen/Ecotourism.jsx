@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 // import styled from 'styled-components';
-import { SectionContainer, CardsContenaire, TitleSection, Text } from '../StyledComponents';
+import { SectionContainer, CardsContenaire, TitleSection, Text, colors } from '../StyledComponents';
 import Underline from '../commun/Underline';
+import RoundCard from '../cards/RoundCard';
 
 class Ecotourism extends Component {
   state = {
@@ -19,12 +20,14 @@ class Ecotourism extends Component {
   render() {
     const { dataEcotourism } = this.state;
     return (
-      <SectionContainer id='Ecotourism'>
+      <SectionContainer id='Ecotourism' color={'none'}>
         <TitleSection>{dataEcotourism.title}</TitleSection>
         <Underline />
         <Text>{dataEcotourism.content}</Text>
         <CardsContenaire>
-
+          <RoundCard />
+          <RoundCard />
+          <RoundCard />
         </CardsContenaire>
       </SectionContainer>
     );

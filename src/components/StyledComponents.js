@@ -17,7 +17,7 @@ export const margins = {
 export const colors = {
   red: '#8e0915',
   lightGrey: '#eaeaea',
-  lightGreen: '#abcfbe',
+  lightGreen: '#ACBFBE',
   darkGreen: '#718f94',
   white: '#FFFFFF',
   whiteTransparent: 'rgba(255, 255, 255, 0.12)',
@@ -62,10 +62,10 @@ export const Title1 = styled.h1`
   text-transform: ${props => props.textTransform || "uppercase"};
   font-weight: 550;
   text-align: center;
-  font-size: ${fontSizes.l};;
+  font-size: ${fontSizes.l};
 
   @media (max-width: ${mobileThresholdPixels}) {
-    font-size: ${fontSizes.m};;
+    font-size: ${fontSizes.m};
   }
 `;
 
@@ -175,6 +175,8 @@ export const SectionContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5vh;
+  background-color: ${props => props.color ? props.color : 'none'}
 
   @media (max-width: ${mobileThresholdPixels}) {
     
