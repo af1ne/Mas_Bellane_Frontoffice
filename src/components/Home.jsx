@@ -10,6 +10,7 @@ import HostTable from './screen/HostTable';
 import OurHistory from './screen/OurHistory';
 import Ecotourism from './screen/Ecotourism';
 import Around from  './screen/Around';
+import ContactUs from './screen/ContactUs';
 
 const App = styled.div`
   width: 100vw;
@@ -20,7 +21,7 @@ const App = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${colors.lightGrey};
+  background-color: ${props => props.color ? props.color : colors.lightGrey};
   width: 75vw;
   margin: auto;
 
@@ -28,6 +29,12 @@ export const Container = styled.div`
     width: 67vw;
   }
 `;
+
+const BackgroundContainer = styled.div`
+  width: 100vw;
+  background-color: ${props => props.color ? props.color : colors.lightGrey};
+`;
+
 
 class Home extends Component {
   render() {
@@ -42,10 +49,17 @@ class Home extends Component {
         </Container>
         <HostTable />
         <OurHistory />
-        <Container>
-          <Ecotourism />
-        </Container>
+        <BackgroundContainer color={colors.lightGreen}>
+          <Container color={colors.lightGreen}>
+            <Ecotourism />
+          </Container>
+        </BackgroundContainer>
         <Around />
+        <BackgroundContainer color={colors.darkGreen}>
+          <Container color={colors.darkGreen}>
+            <ContactUs />
+          </Container>
+        </BackgroundContainer>
       </App>
     );
   }

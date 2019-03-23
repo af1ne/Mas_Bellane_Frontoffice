@@ -28,7 +28,7 @@ const BackgroundCover = styled.div`
   background-image: linear-gradient(${colors.blackTransparent}, ${colors.blackTransparent}), url(${cover});
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: -10;
+  z-index: 1;
 `;
 
 class Cover extends Component {
