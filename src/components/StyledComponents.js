@@ -17,7 +17,7 @@ export const margins = {
 export const colors = {
   red: '#8e0915',
   lightGrey: '#eaeaea',
-  lightGreen: '#abcfbe',
+  lightGreen: '#ACBFBE',
   darkGreen: '#718f94',
   white: '#FFFFFF',
   whiteTransparent: 'rgba(255, 255, 255, 0.12)',
@@ -34,17 +34,17 @@ export const BoxShadows = styled.div`
 // ****************************************
 
 export const fontSizes = {
-  xs: '12px',
-  s: '14px',
-  m: '18px',
-  l: '24px',
-  xl: '36px',
+  xs: '1vh',
+  s: '2vh',
+  m: '2.5vh',
+  l: '4vh',
+  xl: '5vh',
 };
 
 export const lineHeight = {
-  xs: '18px',
-  s: '21px',
-  m: '25px',
+  xs: '3.5vh',
+  s: '2vh',
+  m: '3vh',
   l: '32px',
   xl: '44px',
 }
@@ -62,10 +62,10 @@ export const Title1 = styled.h1`
   text-transform: ${props => props.textTransform || "uppercase"};
   font-weight: 550;
   text-align: center;
-  font-size: ${fontSizes.xl};
+  font-size: ${fontSizes.l};
 
   @media (max-width: ${mobileThresholdPixels}) {
-    font-size: ${fontSizes.s};
+    font-size: ${fontSizes.m};
   }
 `;
 
@@ -77,7 +77,7 @@ export const Title2 = styled.h2`
   justify-content: center;
   text-transform: ${props => props.textTransform || "uppercase"};
   text-align: center;
-  font-size: ${fontSizes.xs};
+  font-size: ${fontSizes.l};
 
   @media (max-width: ${mobileThresholdPixels}) {
     font-size: ${fontSizes.m};
@@ -89,7 +89,7 @@ export const TitleSection = styled.h2`
   font-style: normal;
   font-weight: normal;
   line-height: normal;
-  font-size: ${fontSizes.l};
+  font-size: ${fontSizes.m};
   text-align: center;
   text-transform: uppercase;
   margin-top: 5vh;
@@ -99,17 +99,22 @@ export const TitleSection = styled.h2`
   }
 `;
 
+export const Subtitle = styled(TitleSection)`
+  ont-size: ${fontSizes.s};
+  margin-top: 0px;
+`;
+
 export const Text = styled.p`
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
   line-height: ${lineHeight.xl};
-  font-size: ${fontSizes.l};
-  text-align: justify;
+  font-size: ${fontSizes.m};
+  text-align: ${props => props.center ? 'center' : 'justify'};
 
   @media (max-width: ${mobileThresholdPixels}) {
     line-height: ${lineHeight.xs};
-    font-size: ${fontSizes.xs};
+    font-size: ${fontSizes.m};
   }
 `;
 
@@ -120,28 +125,78 @@ export const Text = styled.p`
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+
+  @media (max-width: ${mobileThresholdPixels}) {
+    flex-direction: column;
+  }
 `;
 
-export const Col = styled.div`
+export const Column = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+`;
+
+
+export const CardsContenaire = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: ${props => props.spaceEvenly ? 'space-evenly' : 'space-between'};
+  align-item: strech;
+  width: 100%;
+
+  @media (max-width: ${mobileThresholdPixels}) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+// ****************************************
+// ***             Background           ***
+// ****************************************
+export const BackgroundSection = styled.div`
+  display: block;
+  margin: auto;
+  height: ${props => props.height ? props.height : 'auto'};
+  background-image: ${props =>
+    props.noFilter
+      ? ""
+      : `linear-gradient(
+      ${colors.blackTransparent}, 
+      ${colors.blackTransparent}),`}
+    url(${props => props.image});
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -10;
 `;
 
 // ****************************************
 // ***       Section Containers         ***
 // ****************************************
 
-export const SectionContainer = styled.div`
-  margin: auto;
-  height: 100vh;
-  width: 75vw;
+export const Container = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  width: 75vw;
+  margin: auto;
+  color: ${props => props.white ? 'white' : ''};
 
   @media (max-width: ${mobileThresholdPixels}) {
     width: 67vw;
+  }
+`;
+
+export const SectionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+  background-color: ${props => props.backgroundColor ? props.backgroundColor : 'none'};
+  color: ${props => props.white ? 'white' : ''};
+
+
+  @media (max-width: ${mobileThresholdPixels}) {
+    
   }
   `;
 
