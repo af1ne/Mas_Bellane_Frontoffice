@@ -122,6 +122,21 @@ export const Text = styled.p`
 // ***              Grid                ***
 // ****************************************
 
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: ${mobileThresholdPixels}) {
+    flex-direction: column;
+  }
+`;
+
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+
 export const CardsContenaire = styled.div`
   display: flex;
   flex-direction: row;
@@ -176,7 +191,9 @@ export const SectionContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 5vh;
-  background-color: ${props => props.color ? props.color : 'none'}
+  background-color: ${props => props.backgroundColor ? props.backgroundColor : 'none'};
+  color: ${props => props.white ? 'white' : ''};
+
 
   @media (max-width: ${mobileThresholdPixels}) {
     

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors, fontSizes, Title1 as OriginTitle, mobileThresholdPixels } from '../StyledComponents';
-import Button from '../commun/Button';
+import { fontSizes, Title1 as OriginTitle, mobileThresholdPixels } from '../StyledComponents';
 import fakeImage from '../../assets/images/fakePhotoEau.png';
 
 const radius = '100%';
@@ -48,21 +47,21 @@ const Round = styled.div`
   }
 `;
 
-const Background = styled.div`
-  background: linear-gradient(180deg, rgba(51, 51, 51, 0.2) 0%, rgba(51, 51, 51, 0.2) 100%), url(${fakeImage});
-  background-size: cover;
-  repeat: no-repeat;
-  height: 80%;
-  border-radius: ${radius};
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+// const Background = styled.div`
+//   background: linear-gradient(180deg, rgba(51, 51, 51, 0.2) 0%, rgba(51, 51, 51, 0.2) 100%), url(${fakeImage});
+//   background-size: cover;
+//   repeat: no-repeat;
+//   height: 80%;
+//   border-radius: ${radius};
+//   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
-  @media (max-width: ${mobileThresholdPixels}) {
+//   @media (max-width: ${mobileThresholdPixels}) {
 
-  }
-  :hover {
-    background-image: url(${fakeImage});
-  }
-`;
+//   }
+//   :hover {
+//     background-image: url(${fakeImage});
+//   }
+// `;
 
 const RoundCard = ({ title, label }) => (
   <RoundCardContainer>
