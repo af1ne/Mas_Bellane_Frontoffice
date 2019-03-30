@@ -14,7 +14,7 @@ import {
 } from "../StyledComponents";
 import Underline from '../commun/Underline';
 import ContactForm from '../forms/ContactForm';
-
+import isMobile from '../../services/isMobile';
 const Text = styled(OriginalText)`
   line-height: ${lineHeight.m};
   font-size: ${fontSizes.m};
@@ -27,7 +27,7 @@ const Iframe = styled.iframe`
   border-radius: 2rem;
 
   @media (max-width: ${mobileThresholdPixels}) {
-    width: 75vw;
+    width: 67vw;
     height: 50vh;
   }
 `;
@@ -47,11 +47,7 @@ class ContactUs extends Component {
   render() {
     const { dataContactUs } = this.state;
     return (
-      <SectionContainer
-        id='ContactUs'
-        backgroundColor='{"none"}'
-        white
-      >
+      <SectionContainer id='contactUs' backgroundColor='{"none"}' white>
         <TitleSection>{dataContactUs.title}</TitleSection>
         <Underline />
         <Subtitle>{dataContactUs.subtitle}</Subtitle>
@@ -61,8 +57,9 @@ class ContactUs extends Component {
           <Column>
             <Text>
               Le Mas Bellane <br />
-              Chloé VOGEL et Aurélien BRUNET <br />
-              35 Chemin des Fontaines 26160 Salettes <br />
+              Chloé&nbsp;VOGEL&nbsp;et&nbsp;Aurélien&nbsp;BRUNET <br />
+              35 Chemin des Fontaines {isMobile ? <br /> : ""} 26160
+              Salettes <br />
               04.00.00.00.00
             </Text>
             <Iframe

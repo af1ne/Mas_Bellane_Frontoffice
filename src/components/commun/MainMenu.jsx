@@ -2,17 +2,19 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { mobileThresholdPixels, colors, fontSizes } from '../StyledComponents';
+import scrollToRef from '../../services/scrollToRef';
 
 import routes from '../../config/routes';
 
 const List = styled.ul`
-  width: 40vw;
-  height: 80wh;
+  width: 55vw;
+  columns: 2 100px;
+  column-gap: 3rem;
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flew-wrap: wrap;
+  column-rule: 1px solid ${colors.white};
+
+  @media (max-width: ${mobileThresholdPixels}) {
+  }
 `;
 
 const ListItiem = styled.li`
@@ -38,26 +40,28 @@ const Label = styled.p`
   }
 `;
 
+
 const MainMenu = () => (
   <List>
-    {routes.filter(elem => elem.mainMenu).map((route, i) => 
-      <ListItiem key={route.url}>
-        <NavLink
-          key={i}
-          exact={true}
-          to={route.url}
-          activeClassName="active"
-          style={{
-            textDecorationLine: "none",
-            textDecoration: "none"
-      }}
->
-          <Label>
-            {route.textMenu}
-          </Label>
-        </NavLink>
-      </ListItiem>
-    )}
+    {routes
+      .filter(elem => elem.mainMenu)
+      .map((route, i) => (
+        <ListItiem key={route.url}>
+          <NavLink
+            key={i}
+            exact={true}
+            to={route.url}
+            onClick={() => scrollToRef(route.id)}
+            activeClassName='active'
+            style={{
+              textDecorationLine: "none",
+              textDecoration: "none"
+            }}
+          >
+            <Label>{route.textMenu}</Label>
+          </NavLink>
+        </ListItiem>
+      ))}
   </List>
 );
 

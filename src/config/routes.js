@@ -1,7 +1,4 @@
 import Home from '../components/Home';
-import Place from '../components/screen/Place';
-import Rooms from '../components/screen/Rooms'
-import Room from '../components/screen/Room'
 
 const routes = [
   {
@@ -9,9 +6,11 @@ const routes = [
     mainMenu: false,
     url: "/",
     component: Home,
+    id: "cover",
     seo: {
-      title: 'Le Mas Bellane, maison d\'hôtes et agriculture biologique au coeur de la Drôme',
-      description: ''
+      title:
+        "Le Mas Bellane, maison d'hôtes et agriculture biologique au coeur de la Drôme",
+      description: ""
     }
   },
   {
@@ -19,72 +18,78 @@ const routes = [
     mainMenu: true,
     url: "/accueil",
     component: Home,
-      seo: {
-      title: 'Le Mas Bellane, maison d\'hôtes et agriculture biologique au coeur de la Drôme',
-      description: ''
+    id: "cover",
+    seo: {
+      title:
+        "Le Mas Bellane, maison d'hôtes et agriculture biologique au coeur de la Drôme",
+      description: ""
     }
   },
   {
     textMenu: "Le Lieu",
     mainMenu: true,
     url: "/le-lieu",
-    component: Place,
+    component: Home,
+    id: "place",
     seo: {
-      title: '',
-      description: '',
-    },
+      title: "",
+      description: ""
+    }
   },
   {
     textMenu: "Les Chambres",
     mainMenu: true,
     url: "/les-chambres",
-    component: Rooms,
+    component: Home,
+    id: "rooms",
     seo: {
-      title: '',
-      description: '',
-    },
-  },
-  {
-    textMenu: "La Chambre de l'Eau",
-    mainMenu: false,
-    url: "/les-chambres/la-chambre-de-l-eau",
-    component: Room
-  },
-  {
-    textMenu: "La Chambre du Feu",
-    mainMenu: false,
-    url: "/les-chambres/la-chambre-du-feu",
-    component: Room
-  },
-  {
-    textMenu: "La Chambre de la Terre",
-    mainMenu: false,
-    url: "/les-chambres/la-chambre-de-la-terre",
-    component: Room
+      title: "",
+      description: ""
+    }
   },
   // {
-  // textMenu:  
-  // url: "/les-annexes",
-  //   component: Annex,
-  //   seo: {
-  //     title: '',
-  //     description: '',
-  //   },
-  //   routes: [
-  //     {
-  // textMenu:      
-  // url: "/les-annexes/l-espace",
-  //       component: Space
-  //     },
-  //     {
-  // textMenu:      
-  // url: "/les-annexes/la-cuisine",
-  //       component: Kitchen
-  //     },
-  //   ]
+  //   textMenu: "La Chambre de l'Eau",
+  //   mainMenu: false,
+  //   url: "/les-chambres/la-chambre-de-l-eau",
+  //   component: Room
   // },
   // {
-  // textMenu:  
+  //   textMenu: "La Chambre du Feu",
+  //   mainMenu: false,
+  //   url: "/les-chambres/la-chambre-du-feu",
+  //   component: Room
+  // },
+  // {
+  //   textMenu: "La Chambre de la Terre",
+  //   mainMenu: false,
+  //   url: "/les-chambres/la-chambre-de-la-terre",
+  //   component: Room
+  // },
+  {
+    textMenu: "Les Annexes",
+    mainMenu: true,
+    url: "/les-annexes",
+    component: Home,
+    id: "annexes",
+    seo: {
+      title: "",
+      description: ""
+    }
+    // routes: [
+    //   {
+    //     textMenu: 'L\'Espace',
+    //     url: "/les-annexes/l-espace",
+    //           component: Space,
+    //   },
+    //   {
+    //     textMenu: 'La Cuisine',
+    //     url: "/les-annexes/la-cuisine",
+    //     component: Kitchen,
+    //   },
+    // ]
+  },
+  // {
+  // textMenu:
   // url: "/les-tarifs-et-modalites",
   //   component: Rate,
   //   seo: {
@@ -92,44 +97,52 @@ const routes = [
   //     description: '',
   //   },
   // },
+  {
+    textMenu: "La Table d'Hôtes",
+    mainMenu: true,
+    url: "/la-table-d-hotes",
+    component: Home,
+    id: "hostTable",
+    seo: {
+      title: "",
+      description: ""
+    }
+  },
+  {
+    textMenu: "Notre Histoire",
+    mainMenu: true,
+    url: "/notre-histoire",
+    component: Home,
+    id: "ourHistory",
+    seo: {
+      title: "",
+      description: ""
+    }
+  },
+  {
+    textMenu: "L'écotourisme",
+    mainMenu: true,
+    url: "/l-ecotourisme-au-Mas-Bellane",
+    component: Home,
+    id: "ecotourism",
+    seo: {
+      title: "",
+      description: ""
+    }
+  },
+  {
+    textMenu: "Les Alentours",
+    mainMenu: true,
+    url: "/les-alentours",
+    component: Home,
+    id: "around",
+    seo: {
+      title: "",
+      description: ""
+    }
+  },
   // {
-  // textMenu:  
-  // url: "/la-table-d-hotes",
-  //   component: HosteTable,
-  //   seo: {
-  //     title: '',
-  //     description: '',
-  //   },
-  // },
-  // {
-  // textMenu:  
-  // url: "/notre-histoire",
-  //   component: HosteTable,
-  //   seo: {
-  //     title: '',
-  //     description: '',
-  //   },
-  // },
-  // {
-  // textMenu:  
-  // url: "/l-ecotourisme-au-Mas-Bellane",
-  //   component: Ecotourisme,
-  //   seo: {
-  //     title: '',
-  //     description: '',
-  //   },
-  // },
-  // {
-  // textMenu:  
-  // url: "/les-alentours",
-  //   component: Around,
-  //   seo: {
-  //     title: '',
-  //     description: '',
-  //   },
-  // },
-  // {
-  // textMenu:  
+  // textMenu:
   // url: "/notre-livre-d-or",
   //   component: GoldenBook,
   //   seo: {
@@ -137,17 +150,19 @@ const routes = [
   //     description: '',
   //   },
   // },
+  {
+    textMenu: 'Contactez-nous',
+    mainMenu: true,
+    url: "/contactez-nous",
+    component: Home,
+    id: "contactUs",
+    seo: {
+      title: '',
+      description: '',
+    },
+  },
   // {
-  // textMenu:  
-  // url: "/contactez-nous",
-  //   component: Contact,
-  //   seo: {
-  //     title: '',
-  //     description: '',
-  //   },
-  // },
-  // {
-  // textMenu:  
+  // textMenu:
   // url: '/mentions-legales/',
   //   component: LegalTerms,
   //   seo: {
@@ -155,7 +170,7 @@ const routes = [
   //   },
   // },
   // {
-  // textMenu:  
+  // textMenu:
   // url: "/reserver-votre-sejour-au-mas-bellane",
   //   component: Booking,
   //   seo: {

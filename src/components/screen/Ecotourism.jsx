@@ -20,7 +20,7 @@ class Ecotourism extends Component {
   render() {
     const { dataEcotourism } = this.state;
     return (
-      <SectionContainer id='Ecotourism' backgroundColor={"none"}>
+      <SectionContainer id='ecotourism' backgroundColor={"none"}>
         <TitleSection>{dataEcotourism.title}</TitleSection>
         <Underline />
         <Text>{dataEcotourism.content}</Text>

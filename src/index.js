@@ -19,14 +19,14 @@ ReactDOM.render(
             exact
             path={url}
             key={url}
-            render={props => <C {...props} />} 
+            render={props => <C {...props} />}
           />
         ))}
-        <Route exact url="/*" render={() => <div>404</div>} />
+        <Route exact url='/*' render={() => <div>404</div>} />
       </Switch>
     </ModalProvider>
   </BrowserRouter>,
-  document.getElementById('root'),
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

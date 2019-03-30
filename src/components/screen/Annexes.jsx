@@ -26,7 +26,7 @@ class Annexes extends Component {
   render() {
     const { dataAnnexes, dataSection } = this.state;
     return (
-      <SectionContainer id='Annexes'>
+      <SectionContainer id="annexes">
         <TitleSection>
           {dataSection.title}
         </TitleSection>

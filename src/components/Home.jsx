@@ -36,14 +36,21 @@ const BackgroundContainer = styled.div`
 `;
 
 
+
+
+
 class Home extends Component {
+  
+  setRef = (key, value) => { this[key] = value; }
+
   render() {
+
     return (
-      <App id='home'>
+      <App>
         <MenuModal />
         <Cover />
         <Container>
-          <Place />
+          <Place  />
           <Rooms />
           <Annexes />
         </Container>
