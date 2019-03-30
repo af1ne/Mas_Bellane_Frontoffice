@@ -21,7 +21,7 @@ class HostTable extends Component {
     const { dataHostTable } = this.state;
     return (
       <BackgroundSection image={food}>
-        <Container white>
+        <Container white id='hostTable' >
           <TitleSection>{dataHostTable.title}</TitleSection>
           <Underline white />
           <Text>{dataHostTable.content}</Text>

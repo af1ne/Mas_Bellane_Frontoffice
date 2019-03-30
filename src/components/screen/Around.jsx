@@ -21,7 +21,7 @@ class Around extends Component {
     const { dataAround } = this.state;
     return (
       <BackgroundSection image={mapEarth}>
-        <Container white>
+        <Container white id='around'>
           <TitleSection>{dataAround.title}</TitleSection>
           <Underline white />
           <Text center>{dataAround.content}</Text>

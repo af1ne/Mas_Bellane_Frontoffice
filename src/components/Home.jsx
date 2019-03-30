@@ -35,11 +35,12 @@ const BackgroundContainer = styled.div`
   background-color: ${props => props.color ? props.color : colors.lightGrey};
 `;
 
-
 class Home extends Component {
+  
   render() {
+
     return (
-      <App id='home'>
+      <App>
         <MenuModal />
         <Cover />
         <Container>
