@@ -35,14 +35,8 @@ const BackgroundContainer = styled.div`
   background-color: ${props => props.color ? props.color : colors.lightGrey};
 `;
 
-
-
-
-
 class Home extends Component {
   
-  setRef = (key, value) => { this[key] = value; }
-
   render() {
 
     return (
@@ -50,7 +44,7 @@ class Home extends Component {
         <MenuModal />
         <Cover />
         <Container>
-          <Place  />
+          <Place />
           <Rooms />
           <Annexes />
         </Container>
