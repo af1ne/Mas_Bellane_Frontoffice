@@ -1,12 +1,13 @@
+/* eslint-disable react/jsx-filename-extension */
 /* global document */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import axios from 'axios';
 import './index.css';
 import { ModalProvider } from 'styled-react-modal';
 import routes from './config/routes';
 import * as serviceWorker from './serviceWorker';
-import axios from 'axios';
 
 axios.defaults.baseURL = 'http://127.0.0.1:5001/api/';
 
@@ -22,11 +23,11 @@ ReactDOM.render(
             render={props => <C {...props} />}
           />
         ))}
-        <Route exact url='/*' render={() => <div>404</div>} />
+        <Route exact url="/*" render={() => <div>404</div>} />
       </Switch>
     </ModalProvider>
   </BrowserRouter>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

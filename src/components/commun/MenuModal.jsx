@@ -1,9 +1,8 @@
 import React from 'react';
-// import styled from 'styled-components';
 import Modal from 'styled-react-modal';
 import { mobileThresholdPixels, colors } from '../StyledComponents';
 import BurgerMenu from './BurgerMenu';
-import MainMenu from '../commun/MainMenu';
+import MainMenu from './MainMenu';
 import BgdImg from '../../assets/images/background-menu.jpg';
 
 const StyledModal = Modal.styled`
