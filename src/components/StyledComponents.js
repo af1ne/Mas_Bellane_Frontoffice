@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const mobileThreshold = 800;
 export const mobileThresholdPixels = `${mobileThreshold}px`;
 export const smallMobileThresholdPixels = `${mobileThreshold / 2}px`;
@@ -23,7 +22,7 @@ export const colors = {
   whiteTransparent: 'rgba(255, 255, 255, 0.12)',
   black: '#000000',
   blackTransparent: 'rgba(0, 0, 0, 0.60)',
-  blue: '#545775'
+  blue: '#545775',
 };
 
 export const BoxShadows = styled.div`
@@ -47,7 +46,7 @@ export const lineHeight = {
   m: '3vh',
   l: '32px',
   xl: '44px',
-}
+};
 
 // ****************************
 // ***       Titles         ***
@@ -59,7 +58,7 @@ export const Title1 = styled.h1`
   color: ${props => props.colors || colors.white};
   padding: 1em;
   justify-content: center;
-  text-transform: ${props => props.textTransform || "uppercase"};
+  text-transform: ${props => props.textTransform || 'uppercase'};
   font-weight: 550;
   text-align: center;
   font-size: ${fontSizes.l};
@@ -75,7 +74,7 @@ export const Title2 = styled.h2`
   font-weight: 500;
   padding: 1em;
   justify-content: center;
-  text-transform: ${props => props.textTransform || "uppercase"};
+  text-transform: ${props => props.textTransform || 'uppercase'};
   text-align: center;
   font-size: ${fontSizes.l};
 
@@ -92,7 +91,7 @@ export const TitleSection = styled.h2`
   font-size: ${fontSizes.m};
   text-align: center;
   text-transform: uppercase;
-  margin-top: 5vh;
+  margin-top: ${props => (props.nomargin ? 'none' : '5vh')};
 
   @media (max-width: ${mobileThresholdPixels}) {
     font-size: ${fontSizes.m};
@@ -100,7 +99,7 @@ export const TitleSection = styled.h2`
 `;
 
 export const Subtitle = styled(TitleSection)`
-  ont-size: ${fontSizes.s};
+  font-size: ${fontSizes.s};
   margin-top: 0px;
 `;
 
@@ -110,7 +109,7 @@ export const Text = styled.p`
   font-weight: normal;
   line-height: ${lineHeight.xl};
   font-size: ${fontSizes.m};
-  text-align: ${props => props.center ? 'center' : 'justify'};
+  text-align: ${props => (props.center ? 'center' : 'justify')};
 
   @media (max-width: ${mobileThresholdPixels}) {
     line-height: ${lineHeight.xs};
@@ -140,7 +139,7 @@ export const Column = styled.div`
 export const CardsContenaire = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: ${props => props.spaceEvenly ? 'space-evenly' : 'space-between'};
+  justify-content: ${props => (props.spaceEvenly ? 'space-evenly' : 'space-between')};
   align-item: strech;
   width: 100%;
 
@@ -156,13 +155,12 @@ export const CardsContenaire = styled.div`
 export const BackgroundSection = styled.div`
   display: block;
   margin: auto;
-  height: ${props => props.height ? props.height : 'auto'};
-  background-image: ${props =>
-    props.noFilter
-      ? ""
-      : `linear-gradient(
-      ${colors.blackTransparent}, 
-      ${colors.blackTransparent}),`}
+  height: ${props => (props.height ? props.height : 'auto')};
+  background-image: ${props => (props.noFilter
+    ? ''
+    : `linear-gradient(
+    ${colors.blackTransparent}, 
+    ${colors.blackTransparent}),`)}
     url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
@@ -178,7 +176,7 @@ export const Container = styled.div`
   flex-direction: column;
   width: 75vw;
   margin: auto;
-  color: ${props => props.white ? 'white' : ''};
+  color: ${props => (props.white ? 'white' : '')};
 
   @media (max-width: ${mobileThresholdPixels}) {
     width: 67vw;
@@ -191,8 +189,8 @@ export const SectionContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 5vh;
-  background-color: ${props => props.backgroundColor ? props.backgroundColor : 'none'};
-  color: ${props => props.white ? 'white' : ''};
+  background-color: ${props => (props.backgroundColor ? props.backgroundColor : 'none')};
+  color: ${props => (props.white ? 'white' : '')};
 
 
   @media (max-width: ${mobileThresholdPixels}) {
@@ -209,4 +207,3 @@ export const ResponsiveImg = styled.img`
   position: absolute;
 `;
   // background: ${colors.pictureFilter};
-
