@@ -11,10 +11,11 @@ import {
   lineHeight,
   fontSizes,
   mobileThresholdPixels,
-} from "../StyledComponents";
+} from '../StyledComponents';
 import Underline from '../commun/Underline';
 import ContactForm from '../forms/ContactForm';
 import isMobile from '../../services/isMobile';
+
 const Text = styled(OriginalText)`
   line-height: ${lineHeight.m};
   font-size: ${fontSizes.m};
@@ -36,18 +37,20 @@ class ContactUs extends Component {
   state = {
     dataContactUs: {},
   }
+
   componentDidMount() {
     this.getDataContactUs();
   }
-  getDataContactUs = async event => {
-    const response = await axios.get(`/sections`);
+
+  getDataContactUs = async () => {
+    const response = await axios.get('/sections');
     this.setState({ dataContactUs: response.data[8] });
   }
 
   render() {
     const { dataContactUs } = this.state;
     return (
-      <SectionContainer id='contactUs' backgroundColor='{"none"}' white>
+      <SectionContainer id="contactUs" backgroundColor='{"none"}' white>
         <TitleSection>{dataContactUs.title}</TitleSection>
         <Underline />
         <Subtitle>{dataContactUs.subtitle}</Subtitle>
@@ -56,14 +59,19 @@ class ContactUs extends Component {
           <ContactForm />
           <Column>
             <Text>
-              Le Mas Bellane <br />
-              Chloé&nbsp;VOGEL&nbsp;et&nbsp;Aurélien&nbsp;BRUNET <br />
-              35 Chemin des Fontaines {isMobile ? <br /> : ""} 26160
-              Salettes <br />
+              Le Mas Bellane
+              <br />
+              Chloé&nbsp;VOGEL&nbsp;et&nbsp;Aurélien&nbsp;BRUNET
+              <br />
+              35 Chemin des Fontaines
+              {isMobile ? <br /> : ''}
+              26160
+              Salettes
+              <br />
               04.00.00.00.00
             </Text>
             <Iframe
-              src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d181867.95505766844!2d4.966547103193879!3d44.58301936490901!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b5674acf20eddd%3A0xe6b21801728c602!2s35+Chemin+des+Fontaines%2C+26160+Salettes!5e0!3m2!1sfr!2sfr!4v1553362388193'
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d181867.95505766844!2d4.966547103193879!3d44.58301936490901!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b5674acf20eddd%3A0xe6b21801728c602!2s35+Chemin+des+Fontaines%2C+26160+Salettes!5e0!3m2!1sfr!2sfr!4v1553362388193"
               allowfullscreen
             />
           </Column>
@@ -74,4 +82,3 @@ class ContactUs extends Component {
 }
 
 export default ContactUs;
-

@@ -1,7 +1,7 @@
 import React from 'react';
-// import styled from "styled-components";
+// import styled from 'styled-components';
+import Modal from 'styled-react-modal';
 import { mobileThresholdPixels, colors } from '../StyledComponents';
-import Modal from "styled-react-modal";
 import BurgerMenu from './BurgerMenu';
 import MainMenu from '../commun/MainMenu';
 import BgdImg from '../../assets/images/background-menu.jpg';
@@ -39,8 +39,9 @@ class MenuModal extends React.Component {
     this.beforeClose = this.beforeClose.bind(this);
   }
 
-  toggleModal(e) {
-    this.setState({ isOpen: !this.state.isOpen });
+  toggleModal() {
+    const { isOpen } = this.state;
+    this.setState({ isOpen: !isOpen });
   }
 
   afterOpen() {
@@ -50,14 +51,14 @@ class MenuModal extends React.Component {
   }
 
   beforeClose() {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       this.setState({ opacity: 0 });
       setTimeout(resolve, 200);
     });
   }
 
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, opacity } = this.state;
     return (
       <div>
         <BurgerMenu onClick={this.toggleModal} isOpen={isOpen} />
@@ -67,8 +68,8 @@ class MenuModal extends React.Component {
           beforeClose={this.beforeClose}
           onBackgroundClick={this.toggleModal}
           onEscapeKeydown={this.toggleModal}
-          opacity={this.state.opacity}
-          backgroundProps={{ opacity: this.state.opacity }}
+          opacity={opacity}
+          backgroundProps={{ opacity }}
         >
           <MainMenu />
         </StyledModal>

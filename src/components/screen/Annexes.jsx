@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { SectionContainer, TitleSection, Text, CardsContenaire } from '../StyledComponents';
+import {
+  SectionContainer, TitleSection, Text, CardsContenaire,
+} from '../StyledComponents';
 import Underline from '../commun/Underline';
 import RoomCard from '../cards/RoomCard';
 import Button from '../commun/Button';
@@ -10,16 +12,19 @@ class Annexes extends Component {
     dataSection: {},
     dataAnnexes: [],
   }
+
   componentDidMount() {
     this.getDataSection();
     this.getDataAnnex();
   }
-  getDataSection = async event => {
-    const response = await axios.get(`/sections`);
+
+  getDataSection = async () => {
+    const response = await axios.get('/sections');
     this.setState({ dataSection: response.data[3] });
   }
-  getDataAnnex = async event => {
-    const response = await axios.get(`/annex`);
+
+  getDataAnnex = async () => {
+    const response = await axios.get('/annex');
     this.setState({ dataAnnexes: response.data });
   }
 
@@ -35,13 +40,13 @@ class Annexes extends Component {
           {dataSection.content}
         </Text>
         <CardsContenaire spaceEvenly>
-          {dataAnnexes.map(dataAnnex => 
-          <RoomCard
-            key={dataAnnex.idroom}
-            title={dataAnnex.title}
-            label="Réservation"
-          />
-          )}
+          {dataAnnexes.map(dataAnnex => (
+            <RoomCard
+              key={dataAnnex.idroom}
+              title={dataAnnex.title}
+              label="Réservation"
+            />
+          ))}
         </CardsContenaire>
         <Button
           label={dataSection.textButton}

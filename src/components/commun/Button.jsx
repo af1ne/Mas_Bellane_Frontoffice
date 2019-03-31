@@ -16,8 +16,8 @@ color: ${colors.lightGrey};
 box-shadow:  0 0 4px ${colors.blackTransparent};
 background-position: center;
 transition: background 1s;
-margin-top: ${props => (props.marginTopAndBottom ? "5vh" : "0px")};
-margin-bottom: ${props => (props.marginTopAndBottom ? "5vh" : "0px")};
+margin-top: ${props => (props.marginTopAndBottom ? '5vh' : '0px')};
+margin-bottom: ${props => (props.marginTopAndBottom ? '5vh' : '0px')};
 padding-left: 2vw;
 padding-right: 2vw;
 
@@ -55,6 +55,13 @@ Button.propTypes = {
   label: PropTypes.string,
   darkGreen: PropTypes.bool,
   marginTopAndBottom: PropTypes.bool,
-}
+};
+
+Button.defaultProps = {
+  onClick() {},
+  label: '',
+  darkGreen: false,
+  marginTopAndBottom: false,
+};
 
 export default Button;

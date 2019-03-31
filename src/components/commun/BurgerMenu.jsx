@@ -20,7 +20,7 @@ const Burger = styled.div`
 
 const BurgerMenu = ({ onClick, isOpen }) => (
   <Burger>
-    <HamburgerSpring 
+    <HamburgerSpring
       isActive={isOpen}
       toggleButton={onClick}
       buttonColor="rgba(0, 0, 0, 0.30)"

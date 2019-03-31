@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { colors, mobileThresholdPixels } from '../components/StyledComponents';
+import { colors, mobileThresholdPixels } from './StyledComponents';
 import MenuModal from './commun/MenuModal';
 import Cover from './screen/Cover';
 import Place from './screen/Place';
@@ -9,8 +9,9 @@ import Annexes from './screen/Annexes';
 import HostTable from './screen/HostTable';
 import OurHistory from './screen/OurHistory';
 import Ecotourism from './screen/Ecotourism';
-import Around from  './screen/Around';
+import Around from './screen/Around';
 import ContactUs from './screen/ContactUs';
+import Footer from './screen/Footer';
 
 const App = styled.div`
   width: 100vw;
@@ -21,7 +22,7 @@ const App = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${props => props.color ? props.color : colors.lightGrey};
+  background-color: ${props => (props.color ? props.color : colors.lightGrey)};
   width: 75vw;
   margin: auto;
 
@@ -32,38 +33,36 @@ export const Container = styled.div`
 
 const BackgroundContainer = styled.div`
   width: 100vw;
-  background-color: ${props => props.color ? props.color : colors.lightGrey};
+  background-color: ${props => (props.color ? props.color : colors.lightGrey)};
 `;
 
-class Home extends Component {
-  
-  render() {
+const Home = () => (
+  <App>
+    <MenuModal />
+    <Cover />
+    <Container>
+      <Place />
+      <Rooms />
+      <Annexes />
+    </Container>
+    <HostTable />
+    <OurHistory />
+    <BackgroundContainer color={colors.lightGreen}>
+      <Container color={colors.lightGreen}>
+        <Ecotourism />
+      </Container>
+    </BackgroundContainer>
+    <Around />
+    <BackgroundContainer color={colors.darkGreen}>
+      <Container color={colors.darkGreen}>
+        <ContactUs />
+      </Container>
+    </BackgroundContainer>
+    <BackgroundContainer color={colors.lightGreen}>
+      <Footer />
+    </BackgroundContainer>
+  </App>
+);
 
-    return (
-      <App>
-        <MenuModal />
-        <Cover />
-        <Container>
-          <Place />
-          <Rooms />
-          <Annexes />
-        </Container>
-        <HostTable />
-        <OurHistory />
-        <BackgroundContainer color={colors.lightGreen}>
-          <Container color={colors.lightGreen}>
-            <Ecotourism />
-          </Container>
-        </BackgroundContainer>
-        <Around />
-        <BackgroundContainer color={colors.darkGreen}>
-          <Container color={colors.darkGreen}>
-            <ContactUs />
-          </Container>
-        </BackgroundContainer>
-      </App>
-    );
-  }
-}
 
 export default Home;

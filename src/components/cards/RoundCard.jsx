@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { fontSizes, Title1 as OriginTitle, mobileThresholdPixels } from '../StyledComponents';
 import fakeImage from '../../assets/images/fakePhotoEau.png';
@@ -47,22 +48,6 @@ const Round = styled.div`
   }
 `;
 
-// const Background = styled.div`
-//   background: linear-gradient(180deg, rgba(51, 51, 51, 0.2) 0%, rgba(51, 51, 51, 0.2) 100%), url(${fakeImage});
-//   background-size: cover;
-//   repeat: no-repeat;
-//   height: 80%;
-//   border-radius: ${radius};
-//   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-
-//   @media (max-width: ${mobileThresholdPixels}) {
-
-//   }
-//   :hover {
-//     background-image: url(${fakeImage});
-//   }
-// `;
-
 const RoundCard = ({ title, label }) => (
   <RoundCardContainer>
     <Title1>
@@ -73,5 +58,15 @@ const RoundCard = ({ title, label }) => (
     <Round />
   </RoundCardContainer>
 );
+
+RoundCard.propTypes = {
+  title: PropTypes.string,
+  label: PropTypes.string,
+};
+
+RoundCard.defaultProps = {
+  title: '',
+  label: '',
+};
 
 export default RoundCard;

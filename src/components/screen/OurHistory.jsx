@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import {
   SectionContainer,
@@ -11,9 +11,9 @@ import {
   colors,
   mobileThresholdPixels,
   fontSizes,
-  lineHeight
-} from "../StyledComponents";
-import Underline from "../commun/Underline";
+  lineHeight,
+} from '../StyledComponents';
+import Underline from '../commun/Underline';
 
 import portrait from '../../assets/images/chloeAure.jpg';
 
@@ -48,13 +48,15 @@ const Text = styled(OriginalText)`
 
 class OurHistory extends Component {
   state = {
-    dataOurHistory: {}
+    dataOurHistory: {},
   };
+
   componentDidMount() {
     this.getDataOurHistory();
   }
-  getDataOurHistory = async event => {
-    const response = await axios.get(`/sections`);
+
+  getDataOurHistory = async () => {
+    const response = await axios.get('/sections');
     this.setState({ dataOurHistory: response.data[5] });
   };
 
@@ -62,18 +64,18 @@ class OurHistory extends Component {
     const { dataOurHistory } = this.state;
     return (
       <div>
-        <SectionContainer id='ourHistory'>
+        <SectionContainer id="ourHistory">
           <Container>
             <TitleSection>{dataOurHistory.title}</TitleSection>
             <Underline />
           </Container>
         </SectionContainer>
-          <BackgroundSection noFilter image={portrait} height={'90vh'} >
-            <AboutContainer>
-              <Subtitle>{dataOurHistory.subtitle}</Subtitle>
-              <Text>{dataOurHistory.content}</Text>
-            </AboutContainer>
-          </BackgroundSection>
+        <BackgroundSection noFilter image={portrait} height="90vh">
+          <AboutContainer>
+            <Subtitle>{dataOurHistory.subtitle}</Subtitle>
+            <Text>{dataOurHistory.content}</Text>
+          </AboutContainer>
+        </BackgroundSection>
       </div>
     );
   }

@@ -11,18 +11,20 @@ class Place extends Component {
   state = {
     dataPlace: {},
   }
+
   componentDidMount() {
     this.getDataPlace();
   }
-  getDataPlace = async event => {
-    const response = await axios.get(`/sections`);
+
+  getDataPlace = async () => {
+    const response = await axios.get('/sections');
     this.setState({ dataPlace: response.data[1] });
   }
 
   render() {
     const { dataPlace } = this.state;
     return (
-      <SectionContainer id='place'>
+      <SectionContainer id="place">
         <TitleSection>{dataPlace.title}</TitleSection>
         <Underline />
         <Text>{dataPlace.content}</Text>
@@ -32,4 +34,3 @@ class Place extends Component {
 }
 
 export default Place;
-

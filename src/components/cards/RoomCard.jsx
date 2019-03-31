@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { colors, Title1, mobileThresholdPixels } from '../StyledComponents';
 import Button from '../commun/Button';
@@ -53,16 +54,26 @@ const Footer = styled.div`
 `;
 
 const RoomCard = ({ title, label }) => (
-      <Card>
-        <Background>
-          <Title1>
-            {title}
-          </Title1>
-        </Background>
-        <Footer>
-          <Button label={label} />
-        </Footer>
-      </Card>
+  <Card>
+    <Background>
+      <Title1>
+        {title}
+      </Title1>
+    </Background>
+    <Footer>
+      <Button label={label} />
+    </Footer>
+  </Card>
 );
+
+RoomCard.propTypes = {
+  title: PropTypes.string,
+  label: PropTypes.string,
+};
+
+RoomCard.defaultProps = {
+  title: '',
+  label: '',
+};
 
 export default RoomCard;

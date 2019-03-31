@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { colors, Title1, Title2, SectionContainer } from '../StyledComponents';
+import {
+  colors, Title1, Title2, SectionContainer,
+} from '../StyledComponents';
 import cover from '../../assets/images/cover.jpg';
 import Button from '../commun/Button';
 
@@ -35,26 +37,28 @@ class Cover extends Component {
   state = {
     dataCover: {},
   }
+
   componentDidMount() {
     this.getDataCover();
   }
-  getDataCover = async event => {
-    const response = await axios.get(`/sections`);
+
+  getDataCover = async () => {
+    const response = await axios.get('/sections');
     this.setState({ dataCover: response.data[0] });
   }
 
   render() {
-    const { dataCover} = this.state;
+    const { dataCover } = this.state;
     return (
-        <BackgroundCover>
-          <CoverContenainer id='cover'>
-            <TextContainer>
-              <Title1>{dataCover.title}</Title1>
-              <Title2 textTransform="capitalize">{dataCover.subtitle}</Title2>
-            </TextContainer>
-            <Button label={dataCover.textButton} marginTopAndBottom/>
-          </CoverContenainer>
-        </BackgroundCover>
+      <BackgroundCover>
+        <CoverContenainer id="cover">
+          <TextContainer>
+            <Title1>{dataCover.title}</Title1>
+            <Title2 textTransform="capitalize">{dataCover.subtitle}</Title2>
+          </TextContainer>
+          <Button label={dataCover.textButton} marginTopAndBottom />
+        </CoverContenainer>
+      </BackgroundCover>
     );
   }
 }

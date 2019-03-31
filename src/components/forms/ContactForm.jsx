@@ -54,7 +54,6 @@ class ContactForm extends Component {
       phone,
       message,
     } = this.state;
-console.log(lastName)
     return (
       <FormContainer onSubmit={this.handleSubmit}>
         <Row>

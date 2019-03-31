@@ -34,7 +34,7 @@ export const BoxShadows = styled.div`
 // ****************************************
 
 export const fontSizes = {
-  xs: '1vh',
+  xs: '1.5vh',
   s: '2vh',
   m: '2.5vh',
   l: '4vh',

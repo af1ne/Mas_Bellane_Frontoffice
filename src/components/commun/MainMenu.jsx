@@ -3,12 +3,11 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { mobileThresholdPixels, colors, fontSizes } from '../StyledComponents';
 import scrollToRef from '../../services/scrollToRef';
-
 import routes from '../../config/routes';
 
 const List = styled.ul`
   width: 55vw;
-  columns: 2 100px;
+  columns: 2 150px;
   column-gap: 3rem;
   list-style: none;
   column-rule: 1px solid ${colors.white};
@@ -45,17 +44,17 @@ const MainMenu = () => (
   <List>
     {routes
       .filter(elem => elem.mainMenu)
-      .map((route, i) => (
+      .map(route => (
         <ListItiem key={route.url}>
           <NavLink
-            key={i}
-            exact={true}
+            key={route.id}
+            exact
             to={route.url}
             onClick={() => scrollToRef(route.id)}
-            activeClassName='active'
+            activeClassName="active"
             style={{
-              textDecorationLine: "none",
-              textDecoration: "none"
+              textDecorationLine: 'none',
+              textDecoration: 'none',
             }}
           >
             <Label>{route.textMenu}</Label>

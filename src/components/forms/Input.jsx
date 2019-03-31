@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
-import styled from "styled-components";
-import { colors, mobileThresholdPixels } from "../StyledComponents";
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { colors, mobileThresholdPixels } from '../StyledComponents';
 
 export const InputContainer = styled.div`
   &.merlin-input {
@@ -66,26 +68,48 @@ export const InputContainer = styled.div`
   }
 `;
 
+const Input = ({
+  half,
+  id,
+  label,
+  type,
+  value,
+  onChange,
+}) => (
+  <InputContainer className="merlin-input" half={half}>
+    <input
+      label={label}
+      id={id}
+      type={type}
+      onChange={onChange}
+      value={value}
+      className={value ? 'input has-content' : 'input'}
+    />
+    <label
+      className="label"
+      htmlFor={id}
+    >
+      {label}
+    </label>
+  </InputContainer>
+);
 
+Input.propTypes = {
+  half: PropTypes.bool,
+  id: PropTypes.string,
+  label: PropTypes.string,
+  type: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};
 
-
-const Input = ({ half, heigther, id, label, type, value, onChange }) => {
-  return (
-    <InputContainer className='merlin-input' half={half}>
-      <input
-        heigther={heigther}
-        label={label}
-        id={id}
-        type={type}
-        onChange={onChange}
-        value={value}
-        className={value ? "input has-content" : "input"}
-      />
-      <label className='label' htmlFor={id} autoFocus>
-        {label}
-      </label>
-    </InputContainer>
-  );
+Input.defaultProps = {
+  half: false,
+  id: '',
+  label: '',
+  type: '',
+  value: '',
+  onChange() {},
 };
 
 export default Input;
