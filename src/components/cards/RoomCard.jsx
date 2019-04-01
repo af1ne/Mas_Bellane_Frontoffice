@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { colors, Title1, mobileThresholdPixels } from '../StyledComponents';
 import Button from '../commun/Button';
-import fakeImage from '../../assets/images/fakePhotoEau.png';
+import fakeImage from '../../assets/images/photos/fakePhotoEau.png';
 
 const radius = '0.5rem';
 

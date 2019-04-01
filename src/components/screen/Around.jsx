@@ -5,7 +5,7 @@ import {
 } from '../StyledComponents';
 import Underline from '../commun/Underline';
 import Button from '../commun/Button';
-import mapEarth from '../../assets/images/mapEarth.jpg';
+import mapEarth from '../../assets/images/photos/mapEarth.jpg';
 
 class Around extends Component {
   state = {

@@ -21,7 +21,8 @@ export const colors = {
   white: '#FFFFFF',
   whiteTransparent: 'rgba(255, 255, 255, 0.12)',
   black: '#000000',
-  blackTransparent: 'rgba(0, 0, 0, 0.60)',
+  blackTransparent: 'rgba(0, 0, 0, 0.55)',
+  backgroundFilter: 'rgba(0, 0, 0, 0.85)',
   blue: '#545775',
 };
 

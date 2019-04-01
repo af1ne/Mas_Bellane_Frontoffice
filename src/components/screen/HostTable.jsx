@@ -5,7 +5,7 @@ import {
 } from '../StyledComponents';
 import Underline from '../commun/Underline';
 import Button from '../commun/Button';
-import food from '../../assets/images/food-min.png';
+import food from '../../assets/images/photos/food-min.png';
 
 class HostTable extends Component {
   state = {

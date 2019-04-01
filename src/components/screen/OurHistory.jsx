@@ -15,7 +15,7 @@ import {
 } from '../StyledComponents';
 import Underline from '../commun/Underline';
 
-import portrait from '../../assets/images/chloeAure.jpg';
+import portrait from '../../assets/images/photos/chloeAure.jpg';
 
 const AboutContainer = styled.div`
   position: absolute;

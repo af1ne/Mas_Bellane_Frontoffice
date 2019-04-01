@@ -3,7 +3,7 @@ import Modal from 'styled-react-modal';
 import { mobileThresholdPixels, colors } from '../StyledComponents';
 import BurgerMenu from './BurgerMenu';
 import MainMenu from './MainMenu';
-import BgdImg from '../../assets/images/background-menu.jpg';
+import BgdImg from '../../assets/images/photos/background-menu.jpg';
 
 const StyledModal = Modal.styled`
   width: 70vw;
