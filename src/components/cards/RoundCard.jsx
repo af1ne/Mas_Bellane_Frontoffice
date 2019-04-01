@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { fontSizes, Title1 as OriginTitle, mobileThresholdPixels } from '../StyledComponents';
-import fakeImage from '../../assets/images/fakePhotoEau.png';
+import fakeImage from '../../assets/images/photos/fakePhotoEau.png';
 
 const radius = '100%';
 

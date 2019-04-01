@@ -4,7 +4,7 @@ import axios from 'axios';
 import {
   colors, Title1, Title2, SectionContainer,
 } from '../StyledComponents';
-import cover from '../../assets/images/cover.jpg';
+import cover from '../../assets/images/photos/cover.jpg';
 import Button from '../commun/Button';
 
 const CoverContenainer = styled(SectionContainer)`
