@@ -8,8 +8,18 @@ import cover from '../../assets/images/photos/cover.jpg';
 import food from '../../assets/images/photos/food-min.png';
 import champ from '../../assets/images/photos/background-menu.jpg';
 import chloeAure from '../../assets/images/photos/chloeAure.jpg';
+import facadeRosier from '../../assets/images/photos/facadeRosier.jpg';
+import jaccuzzi from '../../assets/images/photos/jaccuzzi.jpg';
+import pignon from '../../assets/images/photos/pignon.jpg';
+import porsh from '../../assets/images/photos/porsh.jpg';
+import atelier from '../../assets/images/photos/atelier.jpg';
 
 const photos = [
+  {
+    src: facadeRosier,
+    width: 3,
+    height: 4,
+  },
   {
     src: cover,
     width: 4,
@@ -18,32 +28,42 @@ const photos = [
   },
   {
     src: food,
-    width: 16,
-    height: 9,
+    width: 8,
+    height: 4,
     alt: 'A table !',
   },
   {
-    src: champ,
-    width: 3,
-    height: 4,
-    alt: 'Le champ : agriculture biologique de fruits rouges',
+    src: porsh,
+    width: 2,
+    height: 3,
+  },
+  {
+    src: jaccuzzi,
+    width: 2,
+    height: 3,
   },
   {
     src: chloeAure,
-    width: 4,
+    width: 3,
     height: 2,
     alt: 'Cloé et Auré',
   },
-  // {
-  //   src: chloeAure,
-  //   width: 4,
-  //   height: 3,
-  // },
-  // {
-  //   src: food2,
-  //   width: 16,
-  //   height: 9,
-  // },
+  {
+    src: pignon,
+    width: 2,
+    height: 3,
+  },
+  {
+    src: champ,
+    width: 4,
+    height: 3,
+    alt: 'Le champ : agriculture biologique de fruits rouges',
+  },
+  {
+    src: atelier,
+    width: 25,
+    height: 9,
+  },
 ];
 
 class GalleryWithLightbox extends React.Component {
@@ -91,15 +111,15 @@ class GalleryWithLightbox extends React.Component {
         <Gallery
           photos={photos}
           onClick={this.openLightbox}
-          columns={isMobile() ? 2 : 3}
-          margin={5}
+          columns={isMobile() ? 2 : 4}
+          margin={4}
         />
         <Lightbox
           theme={{ container: { background: colors.backgroundFilter } }}
           images={photos.map(x => ({
             ...x,
             srcset: x.srcSet,
-            caption: x.alt,
+            caption: x.alt
           }))}
           backdropClosesModal
           onClose={this.closeLightbox}
