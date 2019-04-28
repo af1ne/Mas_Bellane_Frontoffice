@@ -10,6 +10,7 @@ const List = styled.ul`
   columns: 2 150px;
   column-gap: 3rem;
   list-style: none;
+  column-span: all;
   column-rule: 1px solid ${colors.white};
 
   @media (max-width: ${mobileThresholdPixels}) {
@@ -19,7 +20,6 @@ const List = styled.ul`
 const ListItiem = styled.li`
   font-family: 'Montserrat';
   font-size: ${fontSizes.l};
-  margin: 15px;
 
   @media (max-width: ${mobileThresholdPixels}) {
     font-size: ${fontSizes.m};
@@ -29,9 +29,10 @@ const ListItiem = styled.li`
 const Label = styled.p`
   color: ${colors.white};
   text-decoration: none;
+  margin-top: 0px;
 
   :hover {
-    font-weight: 500;
+    font-weight: 300;
   }
 
   :active {

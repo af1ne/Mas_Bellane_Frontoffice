@@ -11,7 +11,6 @@ const Burger = styled.div`
   left: 95vw;
   border-radius: 1rem;
 
-
   @media (max-width: ${mobileThresholdPixels}) {
     left: 83vw;
     margin-right: 2vw;
