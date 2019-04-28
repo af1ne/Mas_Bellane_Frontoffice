@@ -178,6 +178,7 @@ export const Container = styled.div`
   width: 75vw;
   margin: auto;
   color: ${props => (props.white ? 'white' : '')};
+  ${props => props.bkgColor && `background-color: ${props.bkgColor ? props.bkgColor : colors.lightGrey};`}
 
   @media (max-width: ${mobileThresholdPixels}) {
     width: 67vw;

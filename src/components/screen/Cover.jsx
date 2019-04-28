@@ -24,8 +24,6 @@ const TextContainer = styled.div`
 `;
 
 const BackgroundCover = styled.div`
-  width: 100vw;
-  heigth: 100vh;
   margin: auto;
   background-image: linear-gradient(${colors.blackTransparent}, ${colors.blackTransparent}), url(${cover});
   background-size: cover;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors, mobileThresholdPixels } from './StyledComponents';
+import { colors, Container } from './StyledComponents';
 import MenuModal from './commun/MenuModal';
 import Cover from './screen/Cover';
 import Place from './screen/Place';
@@ -14,25 +14,11 @@ import ContactUs from './screen/ContactUs';
 import Footer from './screen/Footer';
 
 const App = styled.div`
-  width: 100vw;
   margin: auto;
   background-color: ${colors.lightGrey};
-  
-`;
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: ${props => (props.color ? props.color : colors.lightGrey)};
-  width: 75vw;
-  margin: auto;
-
-  @media (max-width: ${mobileThresholdPixels}) {
-    width: 67vw;
-  }
 `;
 
 const BackgroundContainer = styled.div`
-  width: 100vw;
   background-color: ${props => (props.color ? props.color : colors.lightGrey)};
 `;
 
@@ -48,13 +34,13 @@ const Home = () => (
     <HostTable />
     <OurHistory />
     <BackgroundContainer color={colors.lightGreen}>
-      <Container color={colors.lightGreen}>
+      <Container bkgColor={colors.lightGreen}>
         <Ecotourism />
       </Container>
     </BackgroundContainer>
     <Around />
     <BackgroundContainer color={colors.darkGreen}>
-      <Container color={colors.darkGreen}>
+      <Container bkgColor={colors.darkGreen}>
         <ContactUs />
       </Container>
     </BackgroundContainer>
